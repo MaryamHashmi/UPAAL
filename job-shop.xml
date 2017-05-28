@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+<declaration>// Place global declarations here.</declaration>
+<template>
+<name x="5" y="5">Jobber</name>
+<declaration>// Place local declarations here.</declaration>
+<location id="id0" x="128" y="96">
+<name x="144" y="72">work_hard</name>
+</location>
+<location id="id1" x="128" y="32">
+<name x="120" y="0">work_av_hammer</name>
+</location>
+<location id="id2" x="128" y="-96">
+<name x="136" y="-120">work_av_mallet</name>
+</location>
+<location id="id3" x="128" y="-160">
+<name x="144" y="-176">work_easy</name>
+</location>
+<location id="id4" x="0" y="96">
+<name x="-24" y="112">hard</name>
+</location>
+<location id="id5" x="0" y="-160">
+<name x="-24" y="-200">easy</name>
+</location>
+<location id="id6" x="0" y="-32">
+<name x="-40" y="-72">average</name>
+</location>
+<location id="id7" x="-128" y="-32">
+<name x="-184" y="-48">begin</name>
+</location>
+<init ref="id7"/>
+<transition>
+<source ref="id1"/>
+<target ref="id7"/>
+<nail x="256" y="32"/>
+<nail x="256" y="-224"/>
+<nail x="-128" y="-224"/>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id7"/>
+<nail x="256" y="96"/>
+<nail x="256" y="-224"/>
+<nail x="-128" y="-224"/>
+</transition>
+<transition>
+<source ref="id3"/>
+<target ref="id7"/>
+<nail x="128" y="-224"/>
+<nail x="-128" y="-224"/>
+</transition>
+<transition>
+<source ref="id2"/>
+<target ref="id7"/>
+<nail x="256" y="-96"/>
+<nail x="256" y="-224"/>
+<nail x="-128" y="-224"/>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id3"/>
+</transition>
+<transition>
+<source ref="id4"/>
+<target ref="id0"/>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id1"/>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id2"/>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id4"/>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id6"/>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id5"/>
+</transition>
+</template>
+<system>
+// Place template instantiations here. Jobber1 = Jobber(); Jobber2 = Jobber(); // List one or more processes to be composed into a system. system Jobber1, Jobber2;
+</system>
+</nta>
